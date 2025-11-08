@@ -1,12 +1,17 @@
 import React from 'react';
+import { Card } from 'react-bootstrap';
 
 const EventsPage: React.FC = () => {
   return (
-    <div>
-      <h2>Events</h2>
-      <p>Check out upcoming events, workshops, and seminars.</p>
-      {/* Add events list here */}
-    </div>
+    <Card className="mb-3">
+      <Card.Body>
+        <Card.Title as="h2">Events</Card.Title>
+        <Card.Text>
+          Check out upcoming events, workshops, and seminars.
+        </Card.Text>
+        {/* Add events list here */}
+      </Card.Body>
+    </Card>
   );
 };
 

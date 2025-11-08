@@ -1,0 +1,147 @@
+:root {
+  --bg-main: #121212;
+  --bg-card: #1e1e1e;
+  --text-main: #eaeaea;
+  --text-muted: #aaa;
+  --primary: #0d6efd;
+  --nav-bg: rgba(18, 18, 18, 0.8);
+  --shadow: rgba(0, 0, 0, 0.4);
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+.navbar {
+  background: var(--nav-bg);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #222;
+}
+
+.navbar-brand {
+  color: var(--primary) !important;
+  font-weight: 600;
+}
+
+.nav-link {
+  color: var(--text-muted) !important;
+  font-weight: 500;
+}
+.nav-link:hover, .nav-link.active {
+  color: var(--primary) !important;
+  text-decoration: underline;
+}
+
+.card {
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  border: none;
+  box-shadow: 0 0 6px var(--shadow);
+  border-radius: 0.6rem;
+  transition: transform 0.2s ease-in-out;
+}
+.card:hover {
+  transform: translateY(-2px);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #1b1b1b;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+}
+
+h1, h2, h3, h4, h5 {
+  color: var(--primary);
+}
+
+.container {
+  padding-bottom: 4rem;
+}
+
+/* Page transition fade-in animation */
+.fade-in-content {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hamburger to Cross Animation */
+.navbar-toggler {
+  border: none;
+  padding: 0;
+  outline: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background-color: var(--text-main);
+  border-radius: 1px;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.navbar-toggler-icon::before {
+  transform-origin: top left;
+}
+
+.navbar-toggler-icon::after {
+  transform-origin: bottom left;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  transform: rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+  top: 0;
+  transform: rotate(-90deg) translateX(2px);
+  opacity: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+  top: 0;
+  transform: rotate(-90deg) translateX(-2px);
+  opacity: 0;
+}
+
+/* Hide the default react-bootstrap hamburger icon lines */
+.navbar-toggler-icon {
+  background-image: none !important;
+}
+
+.navbar-toggler-icon span {
+  display: none;
+}
